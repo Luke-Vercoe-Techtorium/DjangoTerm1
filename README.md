@@ -3,7 +3,7 @@
 ## Required dependencies
 
 ```batch
-py -m pip install django crispy django-crispy-forms crispy-bootstrap4
+py -m pip install django==4.2.5 crispy django-crispy-forms crispy-bootstrap4
 ```
 
 ## How to run
