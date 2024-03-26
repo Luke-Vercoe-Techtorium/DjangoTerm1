@@ -3,7 +3,7 @@
 ## Required dependencies
 
 ```batch
-py -m pip install django django-crispy-forms
+py -m pip install django crispy django-crispy-forms crispy-bootstrap4
 ```
 
 ## How to run

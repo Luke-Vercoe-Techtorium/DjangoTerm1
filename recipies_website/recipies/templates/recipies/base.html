@@ -8,11 +8,23 @@
             integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     </head>
     <body>
-        <header>
+        <div class="navbar">
             <h1>Django Recipes</h1>
-        </header>
+            <div class="navbar-nav">
+                {% if user.authenticated %}
+                <a class="nav-item nav-link" href="{% url 'user-profile' %}">My Profile</a>
+                <a class="nav-item nav-link" href="{% url 'user-logout' %}">Logout</a>
+                {% else %}
+                <a class="nav-item nav-link" href="{% url 'user-login' %}">Login</a>
+                <a class="nav-item nav-link" href="{% url 'user-register' %}">Register</a>
+                {% endif %}
+            </div>
+        </div>
         <main>
-            {% block content %}{% endblock %}
+            {% if messages %} {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+            {% endfor %} {% endif %}
+            {% block content %} {% endblock %}
         </main>
         <footer>
             <p>&copy; 2024 Recipes. All rights reserved.</p>
