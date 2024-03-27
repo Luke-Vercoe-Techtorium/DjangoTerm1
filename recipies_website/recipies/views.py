@@ -36,7 +36,3 @@ class RecipieUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def test_func(self):
         recipie = self.get_object()
         return self.request.user.is_staff or self.request.user == recipie.author
-
-    def form_valid(self, form):
-        form.instance.author = self.request.user
-        return super().form_valid(form)

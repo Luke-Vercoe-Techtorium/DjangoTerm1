@@ -9,20 +9,30 @@
     </head>
     <body>
         <div class="navbar">
-            <h1>Django Recipes</h1>
-            <div class="navbar-nav">
-                <a class="nav-item nav-link" href="{% url 'recipies-home' %}">Recipes</a>
+            <div class="navbar-nav p-2">
+                <h1>Django Recipes</h1>
+            </div>
+            <div class="navbar-nav p-2">
+                <a class="nav-item nav-link" href="{% url 'recipies-home' %}">Home</a>
+            </div>
+            <div class="navbar-nav p-2">
                 <a class="nav-item nav-link" href="{% url 'recipies-create' %}">Create Recipe</a>
             </div>
-            <div class="navbar-nav">
-                {% if user.is_authenticated %}
+            {% if user.is_authenticated %}
+            <div class="navbar-nav p-2">
                 <a class="nav-item nav-link" href="{% url 'user-profile' %}">My Profile</a>
-                <a class="nav-item nav-link" href="{% url 'user-logout' %}">Logout</a>
-                {% else %}
-                <a class="nav-item nav-link" href="{% url 'user-login' %}">Login</a>
-                <a class="nav-item nav-link" href="{% url 'user-register' %}">Register</a>
-                {% endif %}
             </div>
+            <div class="navbar-nav p-2">
+                <a class="nav-item nav-link" href="{% url 'user-logout' %}">Logout</a>
+            </div>
+            {% else %}
+            <div class="navbar-nav p-2">
+                <a class="nav-item nav-link" href="{% url 'user-login' %}">Login</a>
+            </div>
+            <div class="navbar-nav p-2">
+                <a class="nav-item nav-link" href="{% url 'user-register' %}">Register</a>
+            </div>
+            {% endif %}
         </div>
         <main>
             {% if messages %} {% for message in messages %}
