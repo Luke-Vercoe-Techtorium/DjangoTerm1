@@ -13,10 +13,10 @@
                 <h1>Django Recipes</h1>
             </div>
             <div class="navbar-nav p-2">
-                <a class="nav-item nav-link" href="{% url 'recipies-home' %}">Home</a>
+                <a class="nav-item nav-link" href="{% url 'recipes-home' %}">Home</a>
             </div>
             <div class="navbar-nav p-2">
-                <a class="nav-item nav-link" href="{% url 'recipies-create' %}">Create Recipe</a>
+                <a class="nav-item nav-link" href="{% url 'recipes-create' %}">Create Recipe</a>
             </div>
             {% if user.is_authenticated %}
             <div class="navbar-nav p-2">

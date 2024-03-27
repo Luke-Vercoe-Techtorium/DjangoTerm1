@@ -11,6 +11,6 @@ py -m pip install django==4.2.5 crispy django-crispy-forms crispy-bootstrap4
 Install the dependencies, then
 
 ```batch
-cd ./recipies_website
+cd ./recipes_website
 py ./manage.py runserver
 ```

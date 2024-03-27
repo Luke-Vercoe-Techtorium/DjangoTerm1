@@ -4,7 +4,7 @@ from django.urls import reverse
 
 # Create your models here.
 
-class Recipie(models.Model):
+class recipe(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
 
@@ -14,7 +14,7 @@ class Recipie(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def get_absolute_url(self):
-        return reverse("recipies-detail", kwargs={ "pk": self.pk })
+        return reverse("recipes-detail", kwargs={ "pk": self.pk })
 
     def __str__(self):
         return self.title
