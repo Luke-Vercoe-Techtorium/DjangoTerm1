@@ -1,5 +1,7 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +11,9 @@
     </head>
     <body>
         <div class="navbar">
-            <div class="navbar-nav p-2">
-                <h1>Django Recipes</h1>
+            <div class="navbar-nav p-2" style="display: flex; flex-direction: row;">
+                <img src="{% static 'logo.jpg' %}" alt="Logo Image" width="100px">
+                <h1 class="p-3" style="margin: auto;">Chef Recipes</h1>
             </div>
             <div class="navbar-nav p-2">
                 <a class="nav-item nav-link" href="{% url 'recipes-home' %}">Home</a>
