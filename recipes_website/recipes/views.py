@@ -35,6 +35,11 @@ class recipeDinnerView(ListView):
     template_name ="recipes/dinner.html"
     context_object_name = "recipes"
 
+class recipeDessertView(ListView):
+    model = models.recipe
+    template_name ="recipes/dessert.html"
+    context_object_name = "recipes"
+
 class recipeDetailView(DetailView):
     model = models.recipe
 

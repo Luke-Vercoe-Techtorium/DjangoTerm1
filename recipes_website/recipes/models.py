@@ -7,8 +7,17 @@ from django.urls import reverse
 class recipe(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
-    category = models.CharField(max_length=100, choices=(("NONE", "None"), ("HEALTH_DIET", "Health & Diet"), ("HOLIDAYS", "Holidays")))
-    meal_time = models.CharField(max_length=100, choices=(("BREAKFAST", "Breakfast"), ("LUNCH", "Lunch"), ("DINNER", "Dinner")))
+    category = models.CharField(max_length=100, choices=(
+        ("NONE", "None"),
+        ("HEALTH_DIET", "Health & Diet"),
+        ("HOLIDAYS", "Holidays"),
+    ))
+    meal_time = models.CharField(max_length=100, choices=(
+        ("BREAKFAST", "Breakfast"),
+        ("LUNCH", "Lunch"),
+        ("DINNER", "Dinner"),
+        ("DESSERT", "Dessert"),
+    ))
 
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
