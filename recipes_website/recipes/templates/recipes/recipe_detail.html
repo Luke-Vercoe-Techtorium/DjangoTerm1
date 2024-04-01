@@ -11,8 +11,8 @@ View Recipe
     <div class="card-body">
         <h5 class="card-title">{{ object.title }}</h5>
         <h6 class="card-subtitle mb-2 text-muted">{{ object.author }}</h6>
-        <h6 class="card-subtitle mb-2 text-muted">Category: {{ object.category }}</h6>
-        <h6 class="card-subtitle mb-2 text-muted">Meal Time: {{ object.meal_time }}</h6>
+        <h6 class="card-subtitle mb-2 text-muted">Category: {{ object.get_category_display }}</h6>
+        <h6 class="card-subtitle mb-2 text-muted">Meal Time: {{ object.get_meal_time_display }}</h6>
         <p class="card-text">
             {{ object.description }}
             <p />
