@@ -19,6 +19,22 @@
                 <a class="nav-item nav-link" href="{% url 'recipes-home' %}">Home</a>
             </div>
             <div class="navbar-nav p-2">
+                <div class="navbar-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Daily Recipes</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{% url 'recipes-breakfast' %}">Breakfast</a>
+                        <a class="dropdown-item" href="{% url 'recipes-lunch' %}">Lunch</a>
+                        <a class="dropdown-item" href="{% url 'recipes-dinner' %}">Dinner</a>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-nav p-2">
+                <a class="nav-item nav-link" href="{% url 'recipes-health-diet' %}">Health & Diet</a>
+            </div>
+            <div class="navbar-nav p-2">
+                <a class="nav-item nav-link" href="{% url 'recipes-holidays' %}">Holidays</a>
+            </div>
+            <div class="navbar-nav p-2">
                 <a class="nav-item nav-link" href="{% url 'recipes-create' %}">Create Recipe</a>
             </div>
             {% if user.is_authenticated %}
