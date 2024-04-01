@@ -5,6 +5,9 @@ from django.urls import reverse
 # Create your models here.
 
 class recipe(models.Model):
+    class Meta:
+        ordering = ('-updated_at',)
+
     title = models.CharField(max_length=100)
     ingredients = models.TextField()
     description = models.TextField()
