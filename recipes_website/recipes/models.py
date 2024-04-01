@@ -6,6 +6,7 @@ from django.urls import reverse
 
 class recipe(models.Model):
     title = models.CharField(max_length=100)
+    ingredients = models.TextField()
     description = models.TextField()
     category = models.CharField(max_length=100, choices=(
         ("NONE", "None"),

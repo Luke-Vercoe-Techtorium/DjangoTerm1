@@ -12,15 +12,7 @@ Dessert Recipes
     {% for recipe in recipes %}
 
     {% if recipe.meal_time == "DESSERT" %}
-    <div class="card my-4">
-        <div class="card-body">
-            <h5 class="card-title">{{ recipe.title }}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{{ recipe.author }}</h6>
-            <h6 class="card-text">{{ recipe.description|linebreaksbr }}</h6>
-            <h6 class="card-subtitle mb-2 text-muted">{{ recipe.updated_at|date:"F d, Y" }}</h6>
-            <a href="{% url 'recipes-detail' recipe.pk %}" class="card-link">View Recipe</a>
-        </div>
-    </div>
+    {% include "recipes/recipe_display.html" %}
     {% endif %}
 
     {% endfor %}

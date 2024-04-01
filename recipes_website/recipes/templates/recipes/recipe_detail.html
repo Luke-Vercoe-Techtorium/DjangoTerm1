@@ -13,8 +13,13 @@ View Recipe
         <h6 class="card-subtitle mb-2 text-muted">{{ object.author }}</h6>
         <h6 class="card-subtitle mb-2 text-muted">Category: {{ object.get_category_display }}</h6>
         <h6 class="card-subtitle mb-2 text-muted">Meal Time: {{ object.get_meal_time_display }}</h6>
+        <h6 class="card-title">Ingredients:</h6>
         <p class="card-text">
-            {{ object.description }}
+            {{ object.ingredients|linebreaksbr }}
+            <p />
+        <h6 class="card-title">Description:</h6>
+        <p class="card-text">
+            {{ object.description|linebreaksbr }}
             <p />
         <h6 class="card-subtitle mb-2 text-muted">{{ object.updated_at|date:"F d, Y" }}</h6>
     </div>
